@@ -58,7 +58,7 @@ public class helloWordController {
 	 */
 	@RequestMapping(value="/helloWorld")
 	public String helloWorld(){
-		System.out.println("返回hello视图");
+		System.out.println("返回hello视图!!!!!!");
         return "hello";
 	}
 	
