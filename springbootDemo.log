@@ -1,0 +1,91 @@
+2018-12-28 17:03:29.777  INFO 8212 --- [restartedMain] com.lai.demo.SpringBootDemoApplication   : Starting SpringBootDemoApplication on XZ-201712261910 with PID 8212 (started by Administrator in E:\我的数据\JAVA\Java笔记\Java框架\SpringBoot\springBootDemo)
+2018-12-28 17:03:29.778  INFO 8212 --- [restartedMain] com.lai.demo.SpringBootDemoApplication   : No active profile set, falling back to default profiles: default
+2018-12-28 17:03:30.299  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-28 17:03:30.299  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-28 17:03:30.326  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 1 repository interfaces.
+2018-12-28 17:03:30.334  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-28 17:03:30.334  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-28 17:03:30.344  INFO 8212 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.lai.demo.springDataJpa.ssmUserRepository.
+2018-12-28 17:03:30.344  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2018-12-28 17:03:30.489  INFO 8212 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d75ecf12] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-28 17:03:30.704  INFO 8212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2018-12-28 17:03:30.707  INFO 8212 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-28 17:03:30.708  INFO 8212 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2018-12-28 17:03:30.746  INFO 8212 --- [restartedMain] o.a.c.c.C.[.[localhost].[/springboot]    : Initializing Spring embedded WebApplicationContext
+2018-12-28 17:03:30.746  INFO 8212 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 964 ms
+2018-12-28 17:03:30.770  INFO 8212 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-12-28 17:03:30.771  INFO 8212 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-28 17:03:30.772  INFO 8212 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-28 17:03:30.772  INFO 8212 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2018-12-28 17:03:30.772  INFO 8212 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-28 17:03:30.861  INFO 8212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2018-12-28 17:03:30.862  WARN 8212 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2018-12-28 17:03:30.899  INFO 8212 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-3 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2018-12-28 17:03:30.905  INFO 8212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2018-12-28 17:03:30.919  INFO 8212 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-12-28 17:03:30.944  INFO 8212 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-12-28 17:03:30.975  INFO 8212 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@2a18edef
+2018-12-28 17:03:30.975  INFO 8212 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@2a18edef
+2018-12-28 17:03:30.976  INFO 8212 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@65ee5e9d
+2018-12-28 17:03:30.976  INFO 8212 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@65ee5e9d
+2018-12-28 17:03:31.365  INFO 8212 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-12-28 17:03:31.379  INFO 8212 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-28 17:03:31.770  INFO 8212 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-28 17:03:31.785  WARN 8212 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-12-28 17:03:31.835  WARN 8212 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-12-28 17:03:31.948  INFO 8212 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2018-12-28 17:03:32.019  INFO 8212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/springboot'
+2018-12-28 17:03:32.020  INFO 8212 --- [restartedMain] com.lai.demo.SpringBootDemoApplication   : Started SpringBootDemoApplication in 2.331 seconds (JVM running for 277.033)
+2018-12-28 17:03:32.024  INFO 8212 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2018-12-28 17:03:40.868  INFO 8212 --- [http-nio-8081-exec-3] o.a.c.c.C.[.[localhost].[/springboot]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-28 17:03:40.870  INFO 8212 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-28 17:03:40.881  INFO 8212 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2018-12-28 17:03:40.884  INFO 8212 --- [http-nio-8081-exec-3] c.l.d.c.controller.helloWordController   : ===========日志输出==========
+2018-12-28 17:04:49.521  INFO 8212 --- [Thread-20] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2018-12-28 17:04:49.523  INFO 8212 --- [Thread-20] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2018-12-28 17:04:49.527  INFO 8212 --- [Thread-20] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-12-28 17:04:49.529  INFO 8212 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2018-12-28 17:04:49.546  INFO 8212 --- [Thread-20] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2018-12-28 17:04:50.239  INFO 8212 --- [restartedMain] com.lai.demo.SpringBootDemoApplication   : Starting SpringBootDemoApplication on XZ-201712261910 with PID 8212 (started by Administrator in E:\我的数据\JAVA\Java笔记\Java框架\SpringBoot\springBootDemo)
+2018-12-28 17:04:50.240  INFO 8212 --- [restartedMain] com.lai.demo.SpringBootDemoApplication   : No active profile set, falling back to default profiles: default
+2018-12-28 17:04:50.719  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-28 17:04:50.720  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-28 17:04:50.744  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 1 repository interfaces.
+2018-12-28 17:04:50.749  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-12-28 17:04:50.749  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-28 17:04:50.757  INFO 8212 --- [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.lai.demo.springDataJpa.ssmUserRepository.
+2018-12-28 17:04:50.758  INFO 8212 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2018-12-28 17:04:50.893  INFO 8212 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d75ecf12] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-28 17:04:51.117  INFO 8212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2018-12-28 17:04:51.121  INFO 8212 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-28 17:04:51.122  INFO 8212 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2018-12-28 17:04:51.151  INFO 8212 --- [restartedMain] o.a.c.c.C.[.[localhost].[/springboot]    : Initializing Spring embedded WebApplicationContext
+2018-12-28 17:04:51.151  INFO 8212 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 903 ms
+2018-12-28 17:04:51.171  INFO 8212 --- [restartedMain] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-12-28 17:04:51.172  INFO 8212 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-28 17:04:51.173  INFO 8212 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-28 17:04:51.173  INFO 8212 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2018-12-28 17:04:51.173  INFO 8212 --- [restartedMain] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-28 17:04:51.238  INFO 8212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2018-12-28 17:04:51.239  WARN 8212 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+2018-12-28 17:04:51.275  INFO 8212 --- [restartedMain] com.zaxxer.hikari.pool.PoolBase          : HikariPool-4 - Driver does not support get/set network timeout for connections. (oracle.jdbc.driver.T4CConnection.getNetworkTimeout()I)
+2018-12-28 17:04:51.283  INFO 8212 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2018-12-28 17:04:51.294  INFO 8212 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-12-28 17:04:51.320  INFO 8212 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-12-28 17:04:51.350  INFO 8212 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@2a18edef
+2018-12-28 17:04:51.350  INFO 8212 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@2a18edef
+2018-12-28 17:04:51.350  INFO 8212 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@65ee5e9d
+2018-12-28 17:04:51.350  INFO 8212 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@65ee5e9d
+2018-12-28 17:04:51.739  INFO 8212 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-12-28 17:04:51.752  INFO 8212 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-12-28 17:04:52.085  INFO 8212 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-28 17:04:52.096  WARN 8212 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-12-28 17:04:52.144  WARN 8212 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-12-28 17:04:52.246  INFO 8212 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2018-12-28 17:04:52.319  INFO 8212 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/springboot'
+2018-12-28 17:04:52.320  INFO 8212 --- [restartedMain] com.lai.demo.SpringBootDemoApplication   : Started SpringBootDemoApplication in 2.133 seconds (JVM running for 357.331)
+2018-12-28 17:04:52.324  INFO 8212 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

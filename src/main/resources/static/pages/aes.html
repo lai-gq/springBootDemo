@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+	<meta name="applicable-device" content="pc,mobile">
+	<title>测试前后端传输数据加密</title>
+	<!-- css -->
+	<!-- js -->
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script src="../js/aes.js"></script>
+</head>
+<body >
+	用户名:<input type="text" placeholder="4-12位不包含符号的字符" id="username"></input><br>
+	密码:<input type="password" placeholder="6-12位含数字字母字符" id="password"><br>
+	<button id="sumit">加密后</button><br>
+	用户名:<div id="username_aes"></div><br>
+	密码:<div id="password_aes"></div><br>
+<body>
+<script type="text/javascript">
+	
+	$("#sumit").click(function(){
+		var username=encrypt($("#username").val());
+		var password=encrypt($("#password").val());
+		$("#username_aes").html(username);
+		$("#password_aes").html(password);
+		$.ajax({
+			url : "http://localhost:8081/springboot/aesTest",//请求服务器的登录地址
+			type : "post",//请求方式，get、post
+			dataType : "json",//返回的数据格式：json/xml/html/script/jsonp/text
+			timeout:1000,//设置请求超时时间（毫秒）
+			data : {
+				"username" : username,
+				"password" : password,
+			},
+			success : function(data) {//请求成功回调函数
+				console.log(data);
+				if("SUCESS"!=data.code){
+					alert(data.msg);
+				}else{//验证码发送成功
+					alert("返回的身份证(解密前):"+data.data);
+					alert("返回的身份证(解密后):"+decrypt(data.data));
+				}
+			},
+			error : function(XMLHttpRequest) {//请求失败回调函数
+				//跳转到错误页面提示错误信息
+				alert(XMLHttpRequest.responseText);
+			}
+		});
+	})
+	
+	
+	 /**
+	  * 加密（依赖aes.js）
+	  * @param word 加密的字符串
+	  * @returns {*}
+	  */
+	 function encrypt(word){
+	     var key = CryptoJS.enc.Utf8.parse("bWFsbHB3ZA==WNST");//与后台AesUtil.AES_KEY一致才能使用
+	     var srcs = CryptoJS.enc.Utf8.parse(word);
+	     var encrypted = CryptoJS.AES.encrypt(srcs, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+	     return encrypted.toString();
+	 }
+	 
+	 /**
+	  * 解密
+	  * @param word 解密的字符串
+	  * @returns {*}
+	  */
+	 function decrypt(word){
+	     var key = CryptoJS.enc.Utf8.parse("bWFsbHB3ZA==WNST");//与后台AesUtil.AES_KEY一致才能使用
+	     var decrypt = CryptoJS.AES.decrypt(word, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+	     return CryptoJS.enc.Utf8.stringify(decrypt).toString();
+	 } 
+	
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

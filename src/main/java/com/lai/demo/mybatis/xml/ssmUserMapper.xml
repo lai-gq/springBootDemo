@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lai.demo.mybatis.mapper.ssmUserMapper">
+	<!-- 单纯查询用户对象 -->
+	<resultMap id="BaseResultMap" type="com.lai.demo.mybatis.entity.ssmUser">
+		<id column="USERID" property="userid" jdbcType="DECIMAL" />
+		<result column="USERNAME" property="username" jdbcType="VARCHAR" />
+		<result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+		<result column="MOBILE" property="mobile" jdbcType="DECIMAL" />
+		<result column="SEX" property="sex" jdbcType="VARCHAR" />
+		<result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="STATUS" property="status" jdbcType="VARCHAR" />
+		<result column="REMARK" property="remark" jdbcType="VARCHAR" />
+		<result column="LAST_LOGIN_TIME" property="lastLoginTime" jdbcType="TIMESTAMP" />
+		<result column="LOGIN_COUNT" property="loginCount" jdbcType="DECIMAL" />
+	</resultMap>
+	<!-- 查询用户的头像 -->
+	<resultMap id="ResultMapWithBLOBs" type="com.lai.demo.mybatis.entity.ssmUser" extends="BaseResultMap">
+		<result column="HEAD" property="head" jdbcType="BLOB" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		USERID, USERNAME, PASSWORD, MOBILE, SEX, CREATE_TIME, STATUS, REMARK,
+		LAST_LOGIN_TIME,
+		LOGIN_COUNT
+	</sql>
+	<sql id="Blob_Column_List">
+		HEAD
+	</sql>
+	
+	<!-- 查询所有用户 -->
+	<select id="queryAll" resultMap="ResultMapWithBLOBs">
+		select
+		<include refid="Base_Column_List" />,<include refid="Blob_Column_List" />
+		from LAI.SSM_USER
+	</select>
+	
+	<!-- 根据用户名或者手机号查询用户对象 (多个参数可以没有parameterType，参数顺序用#{arg0}...)-->
+	<select id="getUserByUsername" resultMap="BaseResultMap" parameterType="String">
+		select * from SSM_USER where USERNAME=#{username}
+	</select>
+	
+	<!-- 根据用户主键删除用户对象 -->
+	<delete id="delUser" parameterType="String">
+		delete from SSM_USER where USERNAME=#{username}
+	</delete>
+	
+	<!-- 添加用户 -->
+	<insert id="addUser" parameterType="com.lai.demo.mybatis.entity.ssmUser">
+		insert into SSM_USER(USERID,USERNAME,PASSWORD,MOBILE,CREATE_TIME,STATUS) 
+		values (#{userid},#{username},#{password},#{mobile},#{createTime},#{status})
+	</insert>
+	
+	<!-- 更改用户信息 -->
+	<update id="updateUser" parameterType="com.lai.demo.mybatis.entity.ssmUser">
+		update LAI.SSM_USER
+		<set>
+			<if test="username != null">
+				USERNAME = #{username,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				PASSWORD = #{password,jdbcType=VARCHAR},
+			</if>
+			<if test="mobile != null">
+				MOBILE = #{mobile,jdbcType=DECIMAL},
+			</if>
+			<if test="sex != null">
+				SEX = #{sex,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="status != null">
+				STATUS = #{status,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				REMARK = #{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="lastLoginTime != null">
+				LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="loginCount != null">
+				LOGIN_COUNT = #{loginCount,jdbcType=DECIMAL},
+			</if>
+			<if test="head != null">
+				HEAD = #{head,jdbcType=BLOB},
+			</if>
+		</set>
+		where USERID = #{userid,jdbcType=DECIMAL}
+	</update>
+</mapper>

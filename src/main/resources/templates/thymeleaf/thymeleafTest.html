@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8">
+	<title>Springboot整合thymeleaf模板</title>
+	<!-- 引入css    通常写法:href="../../static/css/thymeleafTest.css" -->
+	<link th:href="@{/css/thymeleafTest.css}" rel="stylesheet" type="text/css" />
+	<!-- 引入js -->
+	<script th:src="@{/js/thymeleafTest.js}"></script>
+	
+	<style th:inline="css">
+	    .[[${classname}]] {
+	      text-align: [[${align}]];
+	    }
+	</style>
+</head>
+<body>
+	<span class="cssTest">引入css文件为则该段文字为绿色1 </span>
+	
+	<span th:text="'用户名:'+${user.username}">静态值</span>
+	<span th:inline="text">[[${user.username}]]</span>
+	
+	<!-- 根据对象.属性获取 --><hr>
+	<div>
+		用户名:<input th:id="${user.userid}" th:name="${user.username}" th:value="${user.username}"><br>
+		性别:<input th:value="${user.sex}"><br>
+		注册时间:<input th:value="${user.createTime}"><br>
+		注册时间(格式化):<input th:value="${#dates.format(user.createTime,'yyyy-MM-dd')}">
+	</div>
+	
+	<!-- 另一种方式获取值 --><hr>
+	<div th:object="${user}">
+		用户名:<input th:id="*{userid}" th:name="*{username}" th:value="*{username}"><br>
+		性别:<input th:value="*{sex}"><br>
+		注册时间:<input th:value="*{createTime}"><br>
+		注册时间(格式化):<input th:value="*{#dates.format(createTime,'yyyy-MM-dd hh:mm:ss')}">
+	</div>
+	
+	<!-- th:text和 th:utext区别--><hr>
+	th:text和 th:utext区别:<br>
+	<span th:text="${htmlShow}">abc</span>
+	<span th:utext="${htmlShow}">abc</span>
+	
+	<!-- 连接地址填写 --><hr>
+	URL:<a href="" th:href="@{https://www.imooc.com}">网站地址</a>
+	
+	<!-- from表单测试 --><hr>
+	<form th:action="@{/thymeleafTest}" th:object="${user}" th:method="post">
+		<input type="text" th:field="*{username}"/>
+		<input type="text" th:field="*{password}"/>
+		<input type="submit"/>
+	</form>
+	
+	<!-- if判断测试[除了==其他的要使用转义字符: >, <, >=, <= != 对应(gt, lt, ge, le, ne)]--><hr>
+	性别:
+	<span th:if="${user.sex}==1">男</span>
+	<span th:if="${user.sex}==2">女</span><br>
+	<span th:if="${user.sex} gt 1">大于1 (大于等于用：ge)</span>
+	<span th:if="${user.sex} lt 1">小于1 (小于等于用：le)</span>
+	
+	<!-- selectd判断测试--><hr>
+	select:
+	<select>
+		<option>选择框</option>
+		<option th:selected="${user.sex} eq '1'">男</option>
+		<option th:selected="${user.sex} eq '2'">女</option>
+	</select>
+	
+	<!-- foreach循环测试--><hr>
+	foreach:
+	<table>
+		<tr>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>注册时间</th>
+			<th>当前循环对象的index(从0)</th>
+			<th>当前循环是否是第一个</th>
+			<th>当前循环是否是偶数</th>
+		</tr>
+		<tr th:each="person,state:${userList}">
+			<th th:text="${person.username}">姓名</th>
+			<th th:text="${person.sex}==1?'男':'女'"></th>
+			<th th:text="${#dates.format(person.createTime,'yyyy-MM-dd')}">注册时间</th>
+			<th th:text="${state.index}"></th>
+			<th th:text="${state.first}"></th>
+			<th th:text="${state.even}"></th>
+		</tr>
+	</table>
+	
+	<!-- switch测试，* 代表default，其他都没匹配到会显示带*的--><hr>
+	switch:
+	<div th:switch="${user.sex}">
+		<p th:case="#{user.sex}">男</p>
+		<p th:case="2">女</p>
+		<p th:case="*">不明</p>
+	</div>
+	
+	<!-- 嵌套测试 "[页面名称]::[th:fragment的值]"--><hr>
+	<div th:fragment="lgq">
+        &copy; 2018 ***有限公司制作
+	</div>
+	<hr>
+	th:replace=:
+	<div th:replace=":: lgq"></div>
+	<hr>
+	th:include:
+	<div th:include="::lgq"></div>
+	
+<body>
+
+<script th:inline="javascript">
+	//js显示对应值
+	var name1 = [[${user.username}]];
+	//后台没值显示lisi，有值显示对应值
+    var name = /*[{${user.username}]]*/"lisi";
+    alert(name);
+</script>
+</html>
